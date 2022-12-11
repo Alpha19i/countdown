@@ -65,3 +65,25 @@ form{
     font-size: 6rem;
     text-shadow:0px 0px 3px 4px navy;
 }
+progress{
+    appearance: none;
+    position: relative;
+}
+.progress_styled{
+    width:100%;
+    line-height:2;
+    height: 3rem;
+}
+progress::-webkit-progress-bar{
+    background-color: #000023;
+    border-radius: 2px 2px 2px 10px;
+    background-color: clear;
+    border: solid blue;
+    box-shadow: inset 10% 10% 21% rgba(240,240,240,0.1);
+}
+progress::-webkit-progress-value{
+    background: #d3e2dc;
+    background: linear-gradient(to bottom, #d3e2dc 1%, #cde8dd 49%, #d3e2dc 100%);
+    border-radius: 10px;
+    transition: width 1s linear;
+}
