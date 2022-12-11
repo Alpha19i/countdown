@@ -26,3 +26,31 @@ body{
     width: 90%;
     margin: 0 auto;
 }
+input[type="number"],
+#colonStyles{
+    -webkit-transition: background 1s, color 1s, font-size 1s;
+    transition: background 1s, color 1s, font-size 1s;
+}
+input{
+    font-size: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    border: none;
+
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+}
+
