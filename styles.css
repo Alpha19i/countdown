@@ -13,3 +13,16 @@ body{
     width: 100%;
     align-self: center;
 }
+.container{
+    width: 70%;
+    background: royalblue;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0px 0px 100px 3px royalblue;
+}
+.subcontainer{
+    width: 90%;
+    margin: 0 auto;
+}
