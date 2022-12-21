@@ -99,3 +99,18 @@ var progressReset = function (){
     secondsInput.removeAttribute("disabled")
     clearTimeout(stopper)
 }
+
+var enterPressed = function (event){
+    var key = event.which || event.keyCode
+    if(key ===13){
+
+        progressCountdown()
+        secondsInput.setAttribute("disabled", true)
+        minutesInput.setAttribute("disabled", true)
+    }
+}
+
+startButton.addEventListener("click", progressCountdown)
+resetButton.addEventListener("click", progressReset)
+minutesInput.addEventListener("keypress", enterPressed)
+secondsInput.addEventListener("keypress", enterPressed)
