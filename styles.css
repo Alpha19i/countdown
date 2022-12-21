@@ -1,31 +1,41 @@
 html, body{
     min-height: 100%;
 }
+
 html{
-    /* display: -webkit-box;
+    display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-box; */
+    display: -ms-flexbox;
     display: flex;
 }
+
 body{
     background: #000023;
     min-height: 100%;
     width: 100%;
+
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
     align-self: center;
 }
+
 .container{
     width: 70%;
     background: royalblue;
     border-radius: 10px;
     padding: 2rem;
+
     margin-right: auto;
     margin-left: auto;
-    box-shadow: 0px 0px 100px 3px royalblue;
+    box-shadow: 0px 0px 100px 3px  
+    royalblue;
 }
+
 .subcontainer{
     width: 90%;
     margin: 0 auto;
 }
+
 input[type="number"],
 #colonStyles{
     -webkit-transition: background 1s, color 1s, font-size 1s;
@@ -42,23 +52,36 @@ input{
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    -webkit-flex: 1;
 
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
     align-self: stretch;
 }
 form{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal ;
+    -webkit-animation-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0.5rem;
+    margin-bottom: 0.5rem;
 }
+
 .colon{
     font-size: 4rem;
     color: #fff;
     font-family: monospace;
+    -webkit-transition: text-shadow 1s, font-size 1s, color 1s;
     transition: text-shadow 1s, font-size 1s, color 1s;
 }
+
 .form_active{
     background: royalblue;
     color: cyan;
@@ -66,6 +89,7 @@ form{
     text-shadow:0px 0px 3px 4px navy;
 }
 progress{
+    -webkit-appearance: none;
     appearance: none;
     position: relative;
 }
@@ -76,14 +100,19 @@ progress{
 }
 progress::-webkit-progress-bar{
     background-color: #000023;
-    border-radius: 2px 2px 2px 10px;
+    border-radius: 0px 0px 0px 10px;
     background-color: clear;
     border: solid blue;
     box-shadow: inset 10% 10% 21% rgba(240,240,240,0.1);
 }
+
 progress::-webkit-progress-value{
     background: #d3e2dc;
     background: linear-gradient(to bottom, #d3e2dc 1%, #cde8dd 49%, #d3e2dc 100%);
+    background: -moz-linear-gradient(top, #d3e2dc 1%, #cde8dd 49%, #d3e2dc 100%);
+    background: -webkit-linear-gradient(top, gold 1%, darkgoldenrod 49%, goldenrod 100%);
+    background: -o-linear-gradient(top, gold 1%, darkgoldenrod 49%, goldenrod 100%);
+    background: -ms-linear-gradient(top, gold 1%, darkgoldenrod 49%, goldenrod 100%);
     border-radius: 10px;
     transition: width 1s linear;
 }
