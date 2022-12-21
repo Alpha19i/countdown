@@ -47,3 +47,55 @@ secondsInput.addEventListener("click", setTime)
 
 
 
+var progressCountdown = function () {
+
+    secondsInput.classList.add("form_active")
+    minutesInput.classList.add("form_active")
+    colonStyle.classList.add("form_active")
+
+    minutesInput.disabled = false
+    secondsInput.disabled = false
+    stopper = setTimeout( progressCountdown, 1000);
+    if (secondsInput.value == 0 && minutesInput.value > 0) {
+        secondsInput.value = 60
+        minutesInput.value -= 1
+    }
+
+    if (secondsInput.value > 0) {
+        secondsInput.value -= 1
+        progressBar.value += 1
+    }
+
+    if (secondsInput.value < 10) {
+        var concatSeconds = secondsInput.value
+        secondsInput.value = ("0" + concatSeconds).slice(-2)
+
+    }
+    if(progressBar.value == progressBar.max){
+
+        secondsInput.classList.remove("form_active")
+        minutesInput.classList.remove("form_active")
+        colonStyle.classList.remove("form_active")
+    
+        var soundClick = document.createElement("audio")
+        soundClick.src = 'http://soundbible.com/mp3/Robot_blip-Marianne_Gagnon-120342607.mp3'
+        soundClick.autoplay = "true"; document.body.appendChild(soundClick);
+
+        clearTimeout(stopper)
+        minutesInput.removeAttribute("disabled")
+        secondsInput.removeAttribute("disabled")
+    }
+}
+
+var progressReset = function (){
+    progressBar.value = 0
+    secondsInput.value = ("0" + 0).slice(-2)
+    minutesInput.value = 0
+    progressBar.setAttribute("max", 0)
+    secondsInput.classList.remove("form_active")
+    minutesInput.classList.remove("form_active")
+    colonStyle.classList.remove("form_active")
+    minutesInput.removeAttribute("disabled")
+    secondsInput.removeAttribute("disabled")
+    clearTimeout(stopper)
+}
